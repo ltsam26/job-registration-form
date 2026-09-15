@@ -15,6 +15,12 @@ const applicationSchema = new mongoose.Schema(
             lowercase: true
         },
 
+        phone: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
         address: {
             type: String,
             required: true,
@@ -32,16 +38,23 @@ const applicationSchema = new mongoose.Schema(
             required: true
         },
 
+        resume: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
         linkedin: {
             type: String,
             trim: true
         }
     },
-
     {
         timestamps: true
     }
 );
 
-module.exports =
-    mongoose.model("Application", applicationSchema);
+module.exports = mongoose.model(
+    "Application",
+    applicationSchema
+);
